@@ -5,6 +5,7 @@ import 'package:facebook_application/facebook_model/facebook_model.dart';
 // ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 

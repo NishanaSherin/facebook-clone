@@ -1,8 +1,12 @@
 import 'package:facebook_application/facebook_model/home_screen.dart';
+// ignore: unused_import
 import 'package:facebook_application/facebook_model/menu_screen.dart';
+// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/rendering.dart';
+// ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
 
 class FacebookScreen extends StatefulWidget {
@@ -77,6 +81,7 @@ class _FacebookScreenState extends State<FacebookScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // ignore: sized_box_for_whitespace
                     Container(
                       width: 60,
                       height: 60,
@@ -108,7 +113,7 @@ class _FacebookScreenState extends State<FacebookScreen> {
                 ),
 
                 const Text("   Arya"),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 const Divider(),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,7 +134,7 @@ class _FacebookScreenState extends State<FacebookScreen> {
                                   
                   ],
                 ),
-                Divider(),
+                const Divider(),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -145,7 +150,7 @@ class _FacebookScreenState extends State<FacebookScreen> {
                     ),
                          Icon(Icons.expand_more_rounded),                    
                   ],),
-                  Divider(),
+                  const Divider(),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -161,12 +166,13 @@ class _FacebookScreenState extends State<FacebookScreen> {
                     ),
                       Icon(Icons.expand_more_rounded),               
                   ],),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                  ElevatedButton(
             onPressed: () { 
             }, 
-            child: Center(child: const Text("Log out")),
-            style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 168, 163, 168),
+            // ignore: sort_child_properties_last
+            child: const Center(child: Text("Log out")),
+            style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 168, 163, 168),
             ),),
               ],
             ),
