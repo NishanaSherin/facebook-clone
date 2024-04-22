@@ -27,7 +27,7 @@ class _FacebookScreenState extends State<FacebookScreen> {
         return AlertDialog(
           title: const Text('Are you sure?'),
           content: const Text(
-            'Are you sure you want to leave this page?',
+            'Are you sure you want to exit?',
           ),
           actions: <Widget>[
             TextButton(
