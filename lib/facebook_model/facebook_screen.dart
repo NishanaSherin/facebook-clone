@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:facebook_application/facebook_model/home_screen.dart';
 // ignore: unused_import
 import 'package:facebook_application/facebook_model/menu_screen.dart';
@@ -18,9 +20,52 @@ class FacebookScreen extends StatefulWidget {
 
 class _FacebookScreenState extends State<FacebookScreen> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
+    void _showBackDialog() {
+    showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Are you sure?'),
+          content: const Text(
+            'Are you sure you want to leave this page?',
+          ),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('No'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Yes'),
+              onPressed: () {
+                Navigator.pop(context);
+                exit(0);
+                
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) async {
+        if (didPop) {
+          return;
+        }
+        _showBackDialog();
+      },
+      child: DefaultTabController(
       length: 6,
       child: Scaffold(
           drawerEnableOpenDragGesture: false,
@@ -286,7 +331,9 @@ class _FacebookScreenState extends State<FacebookScreen> {
               HomeScreen(),
               HomeScreen(),
             ],
-          )),
+          )
+          ),
+    )
     );
   }
 }
